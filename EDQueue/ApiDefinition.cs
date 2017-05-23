@@ -1,9 +1,8 @@
 ﻿using System;
-//using EDQueue;
 using Foundation;
 using ObjCRuntime;
 
-namespace EDQueue
+namespace EDQueues
 {
 	// typedef void (^EDQueueCompletionBlock)(EDQueueResult);
 	delegate void EDQueueCompletionBlock(EDQueueResult result);
@@ -101,27 +100,10 @@ namespace EDQueue
 
 
 		// @optional -(void)queue:(EDQueue *)queue processJob:(NSDictionary *)job completion:(EDQueueCompletionBlock)block;
-		//[Export("queue:processJob:completion:")]
-		//void Queue(EDQueue queue, NSDictionary job, EDQueueCompletionBlock completeBlock);
+		[Export("queue:processJob:completion:")]
+		void Queue(EDQueue queue, NSDictionary job, EDQueueCompletionBlock completeBlock);
 
 	}
-
-
-
-	//[BaseType(typeof(NSObject))]
-	//interface EDTesterTestTest
-	//{
-	//	[Export("createJob:forTask:")]
-	//	EDQueueResult CreateJob(NSObject data, NSObject task);
-
-	//	[Export("queue:processJob:")]
-	//	EDQueueResult Queue(EDQueue queue, NSDictionary job);
-
-	//	[Export("queue:processJob:completion:")]
-	//	void Queue(EDQueue queue, NSDictionary job, EDQueueCompletionBlock block);
-	//}
-
-
 
 	//// @interface EDQueueStorageEngine : NSObject
 	//[BaseType(typeof(NSObject))]
